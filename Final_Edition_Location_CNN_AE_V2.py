@@ -47,17 +47,6 @@ def inv_one_hot(OH_data):
     out = np.array(out)
     return out
 #%%
-# reading data from Matlab files
-# profiles = spio.loadmat('profiles_IEEE_39_Bus.mat', squeeze_me=True)
-# labels = spio.loadmat('labels_IEEE_39_Bus.mat', squeeze_me=True)
-# profiles = profiles ["profiles"]
-# labels = labels ["labels"]
-
-# profiles = spio.loadmat('profiles.mat', squeeze_me=True)
-# labels = spio.loadmat('labels.mat', squeeze_me=True)
-# profiles = profiles ["profile_rand"]
-# labels = labels ["labels_rand"]
-#%%
 
 class Deep_Net_Structure:
 
@@ -71,8 +60,6 @@ class Deep_Net_Structure:
         self.pool_size = pool_size
         self.stride_size = stride_size
         
-    # CNN_layer_list= [512,256,128]
-    # Dense_layer_list = [128]
     def Creat_Network(self):
         
         
@@ -141,9 +128,10 @@ class SwitchCase:
         labels = spio.loadmat('labels_IEEE_14_Bus_Lim.mat', squeeze_me=True)
         profiles = profiles ["profiles"]
         labels = labels ["labels"]
+        model_name = 'IEEE_case_14_Bus'
         
         model = IEEE_14_bus_model([512,256,128], [128]).Creat_Network()
-        return profiles, labels, model
+        return profiles, labels, model,model_name
 
     def IEEE_case_39_Bus(self):
         
@@ -151,9 +139,10 @@ class SwitchCase:
         labels = spio.loadmat('labels_IEEE_39_Bus_Lim.mat', squeeze_me=True)
         profiles = profiles ["profiles"]
         labels = labels ["labels"]
+        model_name = 'IEEE_case_39_Bus'
         
         model = IEEE_39_bus_model([512,256,128], [128]).Creat_Network()
-        return profiles, labels, model
+        return profiles, labels, model,model_name
 
     def IEEE_case_57_Bus(self):
         
@@ -161,9 +150,10 @@ class SwitchCase:
         labels = spio.loadmat('labels_IEEE_57_Bus_Lim.mat', squeeze_me=True)
         profiles = profiles ["profiles"]
         labels = labels ["labels"]
+        model_name = 'IEEE_case_57_Bus'
         
         model = IEEE_57_bus_model([512,256,128], [128]).Creat_Network()
-        return profiles, labels, model
+        return profiles, labels, model,model_name
 
 
 case = SwitchCase()
@@ -180,6 +170,7 @@ if Structure == 'Invalid Case':
 profiles = Structure[0]
 labels = Structure[1]
 model = Structure[2]
+model_name = Structure[3]
 #%%
 
 X_total = profiles         # Input data (delta and omega of generator buses)
@@ -210,20 +201,22 @@ y_test = y [divide_data2:len(profiles),:]
 # model = Model(inputs=[input_shape,decoder_input], outputs=[output, decoderoutput(masked)])
 # test_model = Model(inputs=[input_shape,decoder_input], outputs=[output, decoderoutput(masked)])
 #plot_model(model, to_file='Convolutional.png')
+
+str(model_name)+ '.h5'
 m = 4
-epochs = 150
+epochs = 10
 # simple early stopping
-es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=50)
-mc = ModelCheckpoint('best_model_2DCNN.h5', monitor='val_acc', mode='max', verbose=1, save_best_only = 'True')
+es = EarlyStopping(monitor='val_loss', mode='min', verbose=1, patience=10)
+mc = ModelCheckpoint(str(model_name)+ '_CNN.h5', monitor='val_loss', mode='max', verbose=1, save_best_only = 'True')
 #save_freq = 'epoch'
-model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.0001),loss= ['categorical_crossentropy','mse'] ,loss_weights = [1., 0.0000005],metrics=['acc'])
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.000005),loss= ['categorical_crossentropy','mse'] ,loss_weights = [1., 0.0000005],metrics=['acc'])
 history = model.fit([x_train],[y_train, x_train], batch_size = m, epochs = epochs, validation_data = ([x_valid],[y_valid, x_valid]),callbacks=[es, mc])
 
 
 #%%
 #Predict from above trained model
 #with CustomObjectScope({'DigitCapsuleLayer': DigitCapsuleLayer},{'loss_fn': loss_fn}):
-model = load_model('best_model_2DCNN.h5')
+model = load_model(str(model_name)+ '_CNN.h5')
 
 #saved_model = load_model('best_model.h5')
 start_time = time.time()
@@ -231,35 +224,46 @@ label_predicted_test = model.predict(x_test)
 print("--- %s seconds ---" % (time.time() - start_time))
 label_predicted_train = model.predict(x_train)
 label_predicted_test = model.predict(x_test)
-final_accuracy_test = accuracy_score(inv_one_hot(y_test), inv_one_hot(label_predicted_test))
+final_accuracy_test = accuracy_score(inv_one_hot(y_test), inv_one_hot(label_predicted_test[0]))
 print(final_accuracy_test)
 #%%
+
 # plot training history
-plt.plot(history.history['acc'], label='train')
-plt.plot(history.history['val_acc'], label='test')
+
+plt.plot(history.history[list(history.history.keys())[3]], label='train')
+plt.plot(history.history[list(history.history.keys())[8]], label='validation')
 plt.title('model accuracy')
 plt.ylabel('accuracy')
 plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
+plt.legend(['train', 'validation'], loc='upper left')
 plt.show()
+
 # summarize history for accuracy
 #plt.plot(history.history['accuracy'])
 #plt.plot(history.history['val_accuracy'])
 
 # summarize history for loss
-plt.plot(history.history['loss'])
-plt.plot(history.history['val_loss'])
+
+plt.plot(history.history[list(history.history.keys())[0]])
+plt.plot(history.history[list(history.history.keys())[5]])
 plt.title('model loss')
 plt.ylabel('loss')
 plt.xlabel('epoch')
-plt.legend(['train', 'test'], loc='upper left')
+plt.legend(['train', 'validation'], loc='upper left')
 plt.show()
 
-train_acc = np.array(history.history['acc'])
-valid_acc = np.array(history.history['val_acc'])
+#Train Acc
+train_acc = np.array(history.history[list(history.history.keys())[3]])
 
-train_loss = np.array(history.history['loss'])
-valid_loss = np.array(history.history['val_loss'])
+#Valid Acc
+
+valid_acc = np.array(history.history[list(history.history.keys())[8]])
+
+#Train Loss
+train_loss = np.array(history.history[list(history.history.keys())[0]])
+
+#Valid Loss
+valid_loss = np.array(history.history[list(history.history.keys())[5]])
 
 total_acc = np.array([train_acc,valid_acc])
 total_acc = np.transpose(total_acc)
@@ -267,13 +271,13 @@ total_acc = np.transpose(total_acc)
 total_loss = np.array([train_loss,valid_loss])
 total_loss = np.transpose(total_loss)
 
-total_train_labels = np.array([inv_one_hot(y_train),inv_one_hot(label_predicted_train)])
+total_train_labels = np.array([inv_one_hot(y_train),inv_one_hot(label_predicted_train[0])])
 total_train_labels = np.transpose(total_train_labels)
 
-total_test_labels = np.array([inv_one_hot(y_test),inv_one_hot(label_predicted_test)])
+total_test_labels = np.array([inv_one_hot(y_test),inv_one_hot(label_predicted_test[0])])
 total_test_labels = np.transpose(total_test_labels)
 
-workbook = xlsxwriter.Workbook('Results_CNN_15%.xlsx')
+workbook = xlsxwriter.Workbook(str(model_name)+'_CNN.h5'+'.xlsx')
 worksheet = workbook.add_worksheet('Accuracy')   # training & validation
 
 #write column names
