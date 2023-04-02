@@ -19,5 +19,5 @@ and deep learning along with implementing a privacy-preserving mechanism that ca
 #########################################################################################################################################
 
 Detailed information can be found in our paper in IEEE Internet of Things Journal:
-"A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices" paper.
+"A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
 https://ieeexplore.ieee.org/abstract/document/10026883
