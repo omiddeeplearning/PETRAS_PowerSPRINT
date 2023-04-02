@@ -1,4 +1,4 @@
-# This code is designed for localization of the primary source of the load-altering threats in power grid for the Power-SPRINT project.
+# This code is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
 
 https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
 
