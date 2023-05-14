@@ -23,13 +23,13 @@ and deep learning along with implementing a privacy-preserving mechanism that ca
 
 To run this code, the following libraries need to be installed:
 
-Tensorflow (version 2 or higher)
-Keras (version 2 or higher)
-Scipy (version 1.4 or higher)
-Numpy (version 1.18 or higher)
-Matplotlib (version 3 or higher)
-Xlsxwriter (version 1.3 or higher)
-Scikit-learn (version 0.23 or higher)
+Tensorflow (version 2 or higher),
+Keras (version 2 or higher),
+Scipy (version 1.4 or higher),
+Numpy (version 1.18 or higher),
+Matplotlib (version 3 or higher),
+Xlsxwriter (version 1.3 or higher),
+Scikit-learn (version 0.23 or higher),
 You can install these libraries using the pip package manager. For example, you can install Tensorflow using the following command:
 
 pip install tensorflow
