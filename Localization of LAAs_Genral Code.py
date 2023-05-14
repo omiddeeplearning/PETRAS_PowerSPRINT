@@ -3,7 +3,27 @@
 Created on Tue Mar 21 13:52:36 2023
 
 @author: Omiddeeplearning
+
 if you have any comments, email me: h.r.jahangir@gmail.com
+
+#%%
+To run this code, the following libraries need to be installed:
+
+Tensorflow (version 2 or higher)
+Keras (version 2 or higher)
+Scipy (version 1.4 or higher)
+Numpy (version 1.18 or higher)
+Matplotlib (version 3 or higher)
+Xlsxwriter (version 1.3 or higher)
+Scikit-learn (version 0.23 or higher)
+You can install these libraries using the pip package manager. For example, you can install Tensorflow using the following command:
+
+pip install tensorflow
+
+Similarly, you can install other libraries using the pip install command followed by the library name.
+Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
+
+#%%
 """
 
 
