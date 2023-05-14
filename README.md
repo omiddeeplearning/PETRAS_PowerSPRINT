@@ -21,8 +21,6 @@ and deep learning along with implementing a privacy-preserving mechanism that ca
 ###################################################################
 
 
-
-
 To run this code, the following libraries need to be installed:
 
 Tensorflow (version 2 or higher)
@@ -38,7 +36,12 @@ pip install tensorflow
 
 Similarly, you can install other libraries using the pip install command followed by the library name.
 Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
+
+
 ######################################################################
+
+
+
 Detailed information can be found in our paper in IEEE Internet of Things Journal:
 "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
 https://ieeexplore.ieee.org/abstract/document/10026883
