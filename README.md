@@ -16,7 +16,11 @@ Using a control theoretic-approach, Power-SPRINT will investigate the impact of 
 Power-SPRINT will investigate how to detect such attacks if they occur using the power grid’s physical signals (e.g., load consumption, voltages, frequency, data gathered by existing power grid sensors)
 and deep learning along with implementing a privacy-preserving mechanism that can be deployed at the edge devices.
 
+
+
 ###################################################################
+
+
 
 
 To run this code, the following libraries need to be installed:
