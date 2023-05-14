@@ -16,8 +16,23 @@ Using a control theoretic-approach, Power-SPRINT will investigate the impact of 
 Power-SPRINT will investigate how to detect such attacks if they occur using the power grid’s physical signals (e.g., load consumption, voltages, frequency, data gathered by existing power grid sensors)
 and deep learning along with implementing a privacy-preserving mechanism that can be deployed at the edge devices.
 
-#########################################################################################################################################
+###################################################################
+To run this code, the following libraries need to be installed:
 
+Tensorflow (version 2 or higher)
+Keras (version 2 or higher)
+Scipy (version 1.4 or higher)
+Numpy (version 1.18 or higher)
+Matplotlib (version 3 or higher)
+Xlsxwriter (version 1.3 or higher)
+Scikit-learn (version 0.23 or higher)
+You can install these libraries using the pip package manager. For example, you can install Tensorflow using the following command:
+
+pip install tensorflow
+
+Similarly, you can install other libraries using the pip install command followed by the library name.
+Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
+######################################################################
 Detailed information can be found in our paper in IEEE Internet of Things Journal:
 "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
 https://ieeexplore.ieee.org/abstract/document/10026883
