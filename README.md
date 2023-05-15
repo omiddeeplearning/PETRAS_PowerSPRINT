@@ -49,7 +49,7 @@ After running the code, enter the IEEE case study you want to analyze (14-bus, 3
 The code will run and display the overall accuracy and computation time.
 
 
-To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_readme.md file.
+To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file.
 
 ######################################################################
 
