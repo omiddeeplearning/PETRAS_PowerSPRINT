@@ -114,7 +114,7 @@ class Deep_Net_Structure:
 
 
 # Defining the IEEE cases including the IEEE 14-bus system, IEEE 39-bus system, and IEEE 57-bus system
-# Note that the following is a subclass of the the Deep_Net_Structure class
+# Note that the following is a subclass of the Deep_Net_Structure class
 
 class IEEE_14_bus_model(Deep_Net_Structure):
 
