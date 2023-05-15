@@ -6,7 +6,6 @@ Created on Tue Mar 21 13:52:36 2023
 
 if you have any comments, email me: h.r.jahangir@gmail.com
 
-#%%
 To run this code, the following libraries need to be installed:
 
 Tensorflow (version 2 or higher)
@@ -23,7 +22,6 @@ pip install tensorflow
 Similarly, you can install other libraries using the pip install command followed by the library name.
 Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
 
-#%%
 """
 
 
