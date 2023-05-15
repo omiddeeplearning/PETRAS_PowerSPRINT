@@ -2,8 +2,8 @@
 
 Method 1:
 Simply follow the following steps to launch the webpage
-1.	Download the folder dashboard petras
-2.	Unzip dashboard petras
+1.	Download the folder dashboard
+2.	Unzip dashboard
 3.	Unzip the folder Build.zip
 4.	Click on the file index.html
 The webpage will simply launch on the browser.
