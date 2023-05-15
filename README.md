@@ -39,7 +39,8 @@ Once you have installed these libraries, you can run the code using any Python I
 
 
 ######################################################################
-To use the code, please follow these instructions:
+
+After installing the mentioned libraries, to use the code, please follow these instructions:
 
 Open the code file in your preferred Python IDE or execute it directly from the command line.
 
