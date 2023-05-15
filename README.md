@@ -68,7 +68,7 @@ IET Smart Grid:
 "Data‐driven detection and identification of IoT‐enabled load‐altering attacks in power grids"
 https://doi.org/10.1049/stg2.12066
 
-Under Rweview (Published on arXiv)
+Under Review (Published on arXiv)
 "Localizing Load-Altering Attacks Against Power Grids Using Deep Capsule Nets"
 https://doi.org/10.48550/arXiv.2209.02809
 
