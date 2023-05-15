@@ -15,6 +15,7 @@ Numpy (version 1.18 or higher)
 Matplotlib (version 3 or higher)
 Xlsxwriter (version 1.3 or higher)
 Scikit-learn (version 0.23 or higher)
+
 You can install these libraries using the pip package manager. For example, you can install Tensorflow using the following command:
 
 pip install tensorflow
