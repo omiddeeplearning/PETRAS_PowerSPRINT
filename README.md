@@ -44,9 +44,7 @@ After installing the mentioned libraries, to use the code, please follow these i
 
 Open the code file in your preferred Python IDE or execute it directly from the command line.
 
-
 After running the code, enter the IEEE case study you want to analyze (14-bus, 39-bus, or 57-bus) and choose the running mode (testing or training).
-
 
 The code will run and display the overall accuracy and computation time.
 
