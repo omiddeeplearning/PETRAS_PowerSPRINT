@@ -230,7 +230,7 @@ case = SwitchCase()
 
 # selecting the IEEE case class
 
-print('Enter the total bus number of the IEEE case:')
+print('Enter the total bus number of the IEEE case: (14, 39, or 57)')
 IEEE_case_bus_number = input()
 
 Structure = case.switch(IEEE_case_bus_number)
