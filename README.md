@@ -39,8 +39,20 @@ Once you have installed these libraries, you can run the code using any Python I
 
 
 ######################################################################
+To use the code, please follow these instructions:
+
+Open the code file in your preferred Python IDE or execute it directly from the command line.
 
 
+After running the code, enter the IEEE case study you want to analyze (14-bus, 39-bus, or 57-bus) and choose the running mode (testing or training).
+
+
+The code will run and display the overall accuracy and computation time.
+
+
+To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_readme.md file.
+
+######################################################################
 
 Detailed information can be found in our paper in IEEE Internet of Things Journal:
 "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
