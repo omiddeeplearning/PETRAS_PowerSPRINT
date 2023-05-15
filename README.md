@@ -49,10 +49,27 @@ After running the code, enter the IEEE case study you want to analyze (14-bus, 3
 The code will run and display the overall accuracy and computation time.
 
 
-To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file.
+To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file (this repository also includes one sample snapshot (IEEE 39-bus.png)). 
 
 ######################################################################
 
 Detailed information can be found in our paper in IEEE Internet of Things Journal:
+
 "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
 https://ieeexplore.ieee.org/abstract/document/10026883
+
+
+######################################################################
+
+Other benchmark data-driven monitoring frameworks developed for this project are provided in the following papers:
+
+
+IET Smart Grid:
+"Data‐driven detection and identification of IoT‐enabled load‐altering attacks in power grids"
+https://doi.org/10.1049/stg2.12066
+
+Under Rweview (Published on arXiv)
+"Localizing Load-Altering Attacks Against Power Grids Using Deep Capsule Nets"
+https://doi.org/10.48550/arXiv.2209.02809
+
+
