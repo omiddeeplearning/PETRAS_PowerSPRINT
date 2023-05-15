@@ -43,13 +43,6 @@ from keras import regularizers
 import sys
 
 
-# Just for debugging tensor objects
-#init_op = tf.initialize_all_variables()
-
-#run the graph
-#with tf.Session() as sess:
-    #sess.run(init_op) #execute init_op
-    #print (sess.run())
     
     
 #%% Define Inverse One-hot 
