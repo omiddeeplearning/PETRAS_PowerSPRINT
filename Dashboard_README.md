@@ -24,6 +24,6 @@ Method 3:
 
 We also out this on Netlify (-a free webhosting service). This will be easy to show to the customer since you just use the link pasted below to open the webpage. Just copy and paste the below link on the browser to make it work
 
-https://ubiquitous-kelpie-352601.netlify.app/
+https://646224fa2f43910ccafb6536--moonlit-mochi-6d77b0.netlify.app/
 
 If there is any issue with the above link, simply open the index.html file as mentioned above.
