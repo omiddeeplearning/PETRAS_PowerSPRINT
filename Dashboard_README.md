@@ -1,4 +1,6 @@
+To launch the dashboard file, please use one of the following methods:
 
+##########################################################
 
 Method 1:
 Simply follow the following steps to launch the webpage
