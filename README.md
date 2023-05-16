@@ -66,7 +66,7 @@ To visualize the results in different operation scenarios, you can use the dashb
 
 ######################################################################
 # Papers
-Detailed information can be found in our paper in IEEE Internet of Things Journal:
+Detailed information of this code can be found in our paper in IEEE Internet of Things Journal:
 
 "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
 https://ieeexplore.ieee.org/abstract/document/10026883
