@@ -2,27 +2,7 @@
 """
 Created on Tue Mar 21 13:52:36 2023
 
-@author: Omiddeeplearning
-
-if you have any comments, email me: h.r.jahangir@gmail.com
-
-To run this code, the following libraries need to be installed:
-
-Tensorflow (version 2 or higher)
-Keras (version 2 or higher)
-Scipy (version 1.4 or higher)
-Numpy (version 1.18 or higher)
-Matplotlib (version 3 or higher)
-Xlsxwriter (version 1.3 or higher)
-Scikit-learn (version 0.23 or higher)
-
-You can install these libraries using the pip package manager. For example, you can install Tensorflow using the following command:
-
-pip install tensorflow
-
-Similarly, you can install other libraries using the pip install command followed by the library name.
-Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
-
+@author: u2171379
 """
 
 
@@ -38,11 +18,19 @@ from keras.models import load_model
 import matplotlib.pyplot as plt
 import xlsxwriter
 from sklearn.metrics import accuracy_score
+from sklearn.metrics import confusion_matrix
 import time
 from keras import regularizers
 import sys
 
 
+# Just for debugging tensor objects
+#init_op = tf.initialize_all_variables()
+
+#run the graph
+#with tf.Session() as sess:
+    #sess.run(init_op) #execute init_op
+    #print (sess.run())
     
     
 #%% Define Inverse One-hot 
@@ -114,7 +102,7 @@ class Deep_Net_Structure:
 
 
 # Defining the IEEE cases including the IEEE 14-bus system, IEEE 39-bus system, and IEEE 57-bus system
-# Note that the following is a subclass of the Deep_Net_Structure class
+# Note that the following is a subclass of the the Deep_Net_Structure class
 
 class IEEE_14_bus_model(Deep_Net_Structure):
 
@@ -222,7 +210,7 @@ case = SwitchCase()
 
 # selecting the IEEE case class
 
-print('Enter the total bus number of the IEEE case: (14, 39, or 57)')
+print('Enter the total bus number of the IEEE case (14, 39, or 57):')
 IEEE_case_bus_number = input()
 
 Structure = case.switch(IEEE_case_bus_number)
@@ -402,6 +390,113 @@ elif operation_mode == 'test':
     model = load_model(str(model_name)+ '_CNN.h5')
 else:
     sys.exit("Invalid Input data")
+    
+    
+    
+#%%
+def plot_confusion_matrix(true_labels, predicted_labels):
+    classes = np.unique(np.concatenate((true_labels, predicted_labels)))
+    cm = confusion_matrix(true_labels, predicted_labels, labels=classes)
+    
+    # Create a figure with higher resolution
+    fig = plt.figure(figsize=(8, 6), dpi=100)
+    
+    # Create axes for the plot
+    ax = fig.add_subplot(1, 1, 1)
+    
+    # Plot the confusion matrix as an image
+    im = ax.imshow(cm, interpolation='nearest', cmap=plt.cm.Blues)
+    
+    # Add a colorbar
+    cbar = ax.figure.colorbar(im, ax=ax)
+    
+    # Set the colorbar label
+    cbar.ax.set_ylabel('Count', rotation=-90, va="bottom")
+    
+    # Set the x and y axis labels
+    ax.set_xlabel('Predicted labels')
+    ax.set_ylabel('True labels')
+    
+    # Set the tick labels
+    ax.set_xticks(np.arange(len(classes)))
+    ax.set_yticks(np.arange(len(classes)))
+    ax.set_xticklabels(classes, rotation=45)
+    ax.set_yticklabels(classes)
+    
+    # Set the threshold for text color in the cells
+    threshold = cm.max() / 2.0
+    
+    # Loop over the data dimensions and create text annotations
+    for i in range(len(classes)):
+        for j in range(len(classes)):
+            ax.text(j, i, format(cm[i, j], 'd'),
+                    ha="center", va="center",
+                    color="white" if cm[i, j] > threshold else "black")
+    
+    # Set the title of the plot
+    ax.set_title("Confusion Matrix")
+    
+    # Show the plot in a new window
+    plt.show()
+
+#%%
+
+def plot_time_series(a,b):
+    
+    
+    profiles_set1 =a[:,0:100]*50+50
+    profiles_set2 =b[:,0:100]
+    # Determine the x-axis values (assuming equal spacing)
+    
+    x = np.arange(len(profiles_set1[0]))
+
+    # Create a figure with higher resolution
+    fig = plt.figure(figsize=(8, 6), dpi=100)
+
+    # Create subplots for each set of profiles
+    ax1 = fig.add_subplot(2, 1, 1)
+    ax2 = fig.add_subplot(2, 1, 2)
+
+    # Plot the profiles on separate subplots
+    for subplot in profiles_set1:
+        ax1.plot(x, subplot)
+
+    for subplot in profiles_set2:
+        ax2.plot(x, subplot)
+
+    # Set the y-axis limits based on the profiles
+    min_val1 = (np.min(profiles_set1))
+    max_val1 = (np.max(profiles_set1))
+    
+    min_val2 = (np.min(profiles_set2))
+    max_val2 = (np.max(profiles_set2))
+    
+    ax1.set_ylim(min_val1, max_val1)
+    ax2.set_ylim(min_val2, max_val2)
+
+    # Set the titles for each subplot
+    ax1.set_title('Frequency')
+    ax2.set_title('Voltage Phase Angle')
+
+    # Set the x-axis label
+    fig.text(0.5, 0.04, 'Time', ha='center')
+    
+    # Set the y-axis label for the first subplot
+    fig.text(0.0, 0.75, 'Hz', va='center', rotation='vertical', fontsize=12, color='black')
+    ax1.yaxis.set_label_coords(-0.08, 0.5)
+
+    # Set the y-axis label for the second subplot
+    fig.text(0.0, 0.25, 'Voltage Phase Angle', va='center', rotation='vertical', fontsize=12, color='black')
+    ax2.yaxis.set_label_coords(1.08, 0.5)
+
+    # Adjust the spacing between subplots
+    fig.tight_layout()
+
+    # Show the plot in a new window
+    plt.show()
+
+
+
 
 #%%
 
@@ -436,3 +531,11 @@ for col, data in enumerate(np.transpose(total_test_labels)):
     worksheet.write_column(row, col, data)
     
 workbook.close()
+
+
+
+
+plot_confusion_matrix(total_test_labels[:,0], total_test_labels[:,1])
+
+plot_time_series(np.reshape(profiles [9,:,:,0], (profiles.shape[1],profiles.shape[2])), np.reshape(profiles [9,:,:,1], (profiles.shape[1],profiles.shape[2])))
+
