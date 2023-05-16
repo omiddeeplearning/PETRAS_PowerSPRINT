@@ -54,7 +54,7 @@ Download the files IEEE_case_14_Bus_CNN.zip.001 and IEEE_case_14_Bus_CNN.zip.002
 
 Select both files and extract them using your preferred unzip software.
 
-Copy the extracted file to the main directory of the source code, Localization of LAAs_General Code.py.
+Copy the extracted file to the main directory of the source code, "Localization of LAAs_General Code.py".
 
 After completing these steps, you'll have the necessary pre-trained models in place for the IEEE 14-BUS case. Repeat a similar process for other cases.
 
