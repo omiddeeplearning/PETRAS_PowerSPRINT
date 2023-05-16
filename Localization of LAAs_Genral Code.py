@@ -23,14 +23,6 @@ import time
 from keras import regularizers
 import sys
 
-
-# Just for debugging tensor objects
-#init_op = tf.initialize_all_variables()
-
-#run the graph
-#with tf.Session() as sess:
-    #sess.run(init_op) #execute init_op
-    #print (sess.run())
     
     
 #%% Define Inverse One-hot 
@@ -535,7 +527,7 @@ workbook.close()
 
 
 
-plot_confusion_matrix(total_test_labels[:,0], total_test_labels[:,1])
+#plot_confusion_matrix(total_test_labels[:,0], total_test_labels[:,1])
 
-plot_time_series(np.reshape(profiles [9,:,:,0], (profiles.shape[1],profiles.shape[2])), np.reshape(profiles [9,:,:,1], (profiles.shape[1],profiles.shape[2])))
+#plot_time_series(np.reshape(profiles [9,:,:,0], (profiles.shape[1],profiles.shape[2])), np.reshape(profiles [9,:,:,1], (profiles.shape[1],profiles.shape[2])))
 
