@@ -48,7 +48,7 @@ After running the code, enter the IEEE case study you want to analyze (14-bus, 3
 
 # NOTE: Preparing the Pre-trained models for "Test" Mode
 
-To use the "Test" mode in the code, you need to extract (unzip) the pre-trained models for each case. Follow the steps below to set up the models for the IEEE 14-BUS case (Please do the following steps for each case before running the code):
+To use the "Test" mode in the code, you need to extract (unzip) the pre-trained models for each case. Follow the steps below to set up the models for the IEEE 14-BUS case (Please do the following steps separately for each case before running the code):
 
 Download the files IEEE_case_14_Bus_CNN.zip.001 and IEEE_case_14_Bus_CNN.zip.002.
 
