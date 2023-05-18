@@ -40,9 +40,6 @@ pip install tensorflow
 Similarly, you can install other libraries using the pip install command followed by the library name.
 Once you have installed these libraries, you can run the code using any Python IDE or by executing the script directly from the command line.
 
-
-######################################################################
-
 After installing the mentioned libraries, to use the code, please follow these instructions:
 
 Open the code file in your preferred Python IDE or execute it directly from the command line.
