@@ -1,4 +1,4 @@
-## Power Grid IoT System Protection and Resilience using Intelligent Edge (Power-SPRINT)
+# Power Grid IoT System Protection and Resilience using Intelligent Edge (Power-SPRINT)
 
 ## This code is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
 
