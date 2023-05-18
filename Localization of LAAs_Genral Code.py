@@ -2,7 +2,7 @@
 """
 Created on Tue Mar 21 13:52:36 2023
 
-@author: omiddeeplearning (h.r.jahangir@gmail.com)
+@author: Hamidreza (h.r.jahangir@gmail.com)
 """
 
 
@@ -23,6 +23,7 @@ import time
 from keras import regularizers
 import sys
 
+
     
     
 #%% Define Inverse One-hot 
@@ -38,7 +39,7 @@ def inv_one_hot(OH_data):
 #%%
 
 
-# Defining a general class for designing specific network for all cases
+# Defining a general class for designing a specific network for all cases
 # Note that the Deep_Net_Structure class is the main class and other classes are defined as subclasses of this class
 
 class Deep_Net_Structure:
@@ -63,16 +64,16 @@ class Deep_Net_Structure:
         input_shape = Input(shape=self.input_shape)     
         # First Convolutional Layer
         conv1 = Conv2D( self.CNN_layer_list[0], self.kernel_size[0], strides = self.stride_size[0], activation = 'relu', padding = 'valid')(input_shape)
-        # Adding the pooling layer for the dimesion reduction
+        # Adding the pooling layer for the dimension reduction
         pool1 = MaxPooling2D (pool_size =self.pool_size[0], strides =self.stride_size[1],padding= "valid")(conv1)
-        # Adding the Dropout layer for the improving the training against the overfitting
+        # Adding the Dropout layer for improving the training against the overfitting
         dropout1= Dropout(0.1)(pool1)     
     
         # Second Convolutional Layer
         conv2 = Conv2D(self.CNN_layer_list[1], self.kernel_size[1], strides = self.stride_size[2], padding = 'same')(dropout1)
-        # Adding the pooling layer for the dimesion reduction
+        # Adding the pooling layer for dimension reduction
         pool2 = MaxPooling2D (pool_size =self.pool_size[1], strides =self.stride_size[3], padding= "valid")(conv2)
-        # Adding the Dropout layer for the improving the training against the overfitting
+        # Adding the Dropout layer for improving the training against the overfitting
         dropout2= Dropout(0.1)(pool2) 
         # Flatten data
         flat = Flatten()(dropout2)
@@ -87,14 +88,14 @@ class Deep_Net_Structure:
         decoder3 = Dense(self.Decoder_layer_list[2], activation = 'relu')(decoder2)
         decoderoutput = Reshape(self.input_shape)(decoder3)
         
-        # Defining the multi output model (Localization layer and Recunstruction layer)
+        # Defining the multi-output model (Localization layer and Reconstruction layer)
         model = Model(inputs=input_shape, outputs=[output, decoderoutput])
         
         return model
 
 
 # Defining the IEEE cases including the IEEE 14-bus system, IEEE 39-bus system, and IEEE 57-bus system
-# Note that the following is a subclass of the the Deep_Net_Structure class
+# Note that the following is a subclass of the Deep_Net_Structure class
 
 class IEEE_14_bus_model(Deep_Net_Structure):
 
@@ -117,12 +118,12 @@ class IEEE_57_bus_model(Deep_Net_Structure):
 
 #%% 
 
-# Defining a Swith class for subclasses of the Deep_Net_Structure 
+# Defining a Switch class for subclasses of the Deep_Net_Structure 
 
 class SwitchCase:
 
 
-    # Intialization of the switch class
+    # Initialization of the switch class
     
     def switch(self, Bus_Number):
         default = "Invalid Case"
@@ -210,7 +211,7 @@ Structure = case.switch(IEEE_case_bus_number)
 if Structure == 'Invalid Case':
     sys.exit("Invalid Case, This program is designed for IEEE 14 Bus, IEEE 39 Bus, and IEEE 57 Bus cases")
 
-# initilizing the parameters based on the seelected class
+# Initializing the parameters based on the selected class
 # Note that for understanding the parameters of the selected class, please refer to the subfunctions in the switch class
 
 profiles = Structure[0]
@@ -225,21 +226,21 @@ batch_size_parameter = Structure[7]
 #%%
 
 X_total = profiles         # Input data (delta and omega of generator buses)
-y = labels                 # CLasses (number of attacked bus [load buses])
+y = labels                 # Classes (number of attacked buses [load buses])
 sample_window = 100        # Number of monitored samples per each observation
 
 X = X_total[:,:,0:sample_window,:]
 X = X.astype('float32')
 y = y.astype('float32').reshape(y.shape[0],1)
 
-y = np.array(to_categorical(y.astype('float32')))  # define categorical format for each lable (One-hot)
+y = np.array(to_categorical(y.astype('float32')))  # define a categorical format for each label (One-hot)
 y = np.delete(y,0,1)                               # remove the first column (zero class ) (the extra column is added due to the categorical procedure)
-training_percentage = 0.8;                         # dividing data set to training and test parts
-validation_percentage = 0.1;                       # dividing data set to training and test parts
+training_percentage = 0.8;                         # dividing data set into training and test parts
+validation_percentage = 0.1;                       # dividing data set into training and test parts
 divide_data1 = int(training_percentage*profiles.shape[0])                          # define a dividing parameter
 divide_data2 = int((validation_percentage+training_percentage)*profiles.shape[0])  # define a dividing parameter
 
-# Defining training and test parts
+# Defining training and testing parts
 
 x_train = X [0:divide_data1,:]
 x_valid = X [0:divide_data2,:]
@@ -261,9 +262,9 @@ mc = ModelCheckpoint(str(model_name)+ '_CNN.h5', monitor='val_loss', mode='min',
 #save_freq = 'epoch'
 
 
-# Definng the operation mode (we have two modes: training and testing)
+# Defining the operation mode (we have two modes: training and testing)
 
-print('Please select the operation mode (enter test for testing and enter train for training):')
+print('Please select the operation mode (enter "test" for testing and enter "train" for training):')
 operation_mode = input()
 
 
@@ -273,7 +274,7 @@ if operation_mode == 'train':
     model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=learning_rate_value),loss= ['categorical_crossentropy','mse'] ,loss_weights = [1., reconstruction_loss_parameter],metrics=['acc'])
     history = model.fit([x_train],[y_train, x_train], batch_size = batch_size_parameter, epochs = epochs, validation_data = ([x_valid],[y_valid, x_valid]),callbacks=[es, mc])
     
-    # plot training based on accuracy
+    # plot training based on the accuracy
 
     plt.plot(history.history[list(history.history.keys())[3]], label='train')
     plt.plot(history.history[list(history.history.keys())[8]], label='validation')
@@ -283,7 +284,7 @@ if operation_mode == 'train':
     plt.legend(['train', 'validation'], loc='upper left')
     plt.show()
 
-    # plot training based on loss
+    # plot training based on the loss
 
     plt.plot(history.history[list(history.history.keys())[0]])
     plt.plot(history.history[list(history.history.keys())[5]])
@@ -317,7 +318,7 @@ if operation_mode == 'train':
     #Valid Loss
     valid_loss = np.array(history.history[list(history.history.keys())[5]])
 
-    # preparation for writing the results into the excel file
+    # Preparation for writing the results into the Excel file
     
     total_acc = np.array([train_acc,valid_acc])
     total_acc = np.transpose(total_acc)
@@ -331,11 +332,11 @@ if operation_mode == 'train':
     total_test_labels = np.array([inv_one_hot(y_test),inv_one_hot(label_predicted_test[0])])
     total_test_labels = np.transpose(total_test_labels)
 
-    # write the results into the excel file 
+    # Write the results into the Excel file 
     workbook = xlsxwriter.Workbook(str(model_name)+'_CNN.h5'+'.xlsx')
     worksheet = workbook.add_worksheet('Accuracy')   # training & validation
 
-    #write column names
+    #Write column names
     worksheet.write(0, 0, "Traning")
     worksheet.write(0, 1, "Validation")
 
@@ -345,7 +346,7 @@ if operation_mode == 'train':
 
     worksheet = workbook.add_worksheet('Loss')     # training & validation
 
-    #write column names
+    #Write column names
     worksheet.write(0, 0, "Traning")
     worksheet.write(0, 1, "Validation")
 
@@ -368,7 +369,7 @@ if operation_mode == 'train':
 
     worksheet = workbook.add_worksheet('Test labels')     # training & validation
 
-    #write column names
+    #Write column names
     worksheet.write(0, 0, "Actual")
     worksheet.write(0, 1, "Estimated")
 
@@ -493,7 +494,7 @@ def plot_time_series(a,b):
 #%%
 
 # Testing mode
-# calculate the accuracy and time
+# Calculate the accuracy and time
 
 start_time = time.time()
 label_predicted_test = model.predict(x_test)
@@ -505,15 +506,14 @@ print('localizaion accuracy is =', final_accuracy_test)
 
 #%%
 
-# writing the test outcome into an excel file
+# Writing the test outcome into the Excel file
 
 total_test_labels = np.array([inv_one_hot(y_test),inv_one_hot(label_predicted_test[0])])
 total_test_labels = np.transpose(total_test_labels)
 
 workbook = xlsxwriter.Workbook(str(model_name)+'_CNN.h5_'+'test'+'.xlsx')
-
-
 worksheet = workbook.add_worksheet('Test labels')     # training & validation
+
 #write column names
 worksheet.write(0, 0, "Actual")
 worksheet.write(0, 1, "Estimated")
@@ -527,7 +527,7 @@ workbook.close()
 
 
 
-#plot_confusion_matrix(total_test_labels[:,0], total_test_labels[:,1])
+plot_confusion_matrix(total_test_labels[:,0], total_test_labels[:,1])
 
-#plot_time_series(np.reshape(profiles [9,:,:,0], (profiles.shape[1],profiles.shape[2])), np.reshape(profiles [9,:,:,1], (profiles.shape[1],profiles.shape[2])))
+plot_time_series(np.reshape(profiles [9,:,:,0], (profiles.shape[1],profiles.shape[2])), np.reshape(profiles [9,:,:,1], (profiles.shape[1],profiles.shape[2])))
 
