@@ -1,8 +1,10 @@
 # This code is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
 
-https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
+# If you encounter any issues with the code, please feel free to reach out to me via email at h.r.jahangir@gmail.com (Hamidreza Jahangir). I'll be happy to assist you further.
 
-Power Grid IoT System Protection and Resilience using Intelligent Edge (Power-SPRINT)
+## Power Grid IoT System Protection and Resilience using Intelligent Edge (Power-SPRINT)
+
+https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
 
 Power-SPRINT investigates the cybersecurity risks posed by the growing integration of IoT-enabled smart-home appliances on power grid operations. 
 Existing research on power grid security mainly focuses on utility-side cyber attacks and the associated SCADA system security.
