@@ -70,7 +70,7 @@ To visualize the results in different operation scenarios, you can use the dashb
 # Papers
 Detailed information of this code can be found in our paper in IEEE Internet of Things Journal:
 
-"A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices"
+H. Jahangir, S. Lakshminarayana, C. Maple and G. Epiphaniou, "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices," in IEEE Internet of Things Journal, doi: 10.1109/JIOT.2023.3240289.
 https://ieeexplore.ieee.org/abstract/document/10026883
 
 
@@ -80,11 +80,11 @@ Other benchmark data-driven monitoring frameworks developed for this project are
 
 
 IET Smart Grid:
-"Data‐driven detection and identification of IoT‐enabled load‐altering attacks in power grids"
-https://doi.org/10.1049/stg2.12066
+Subhash Lakshminarayana,  Saurav Sthapit,  Hamidreza Jahangir,  Carsten Maple, and  H. Vincent Poor.: Data-driven detection and identification of IoT-enabled load-altering attacks in power grids. IET Smart Grid. 5( 3), 203– 218 (2022). https://doi.org/10.1049/stg2.12066
+
 
 Under Review (Published on arXiv)
-"Localizing Load-Altering Attacks Against Power Grids Using Deep Capsule Nets"
+Hamidreza Jahangir, Subhash Lakshminarayana, and Carsten Maple. "Localizing Load-Altering Attacks Against Power Grids Using Deep Capsule Nets." arXiv preprint arXiv:2209.02809 (2022).
 https://doi.org/10.48550/arXiv.2209.02809
 
 
