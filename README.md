@@ -76,6 +76,8 @@ The code will run and display the overall accuracy with the needed computation t
 # Visualization
 To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file (this repository also includes one sample snapshot of the dashboard (IEEE 39-bus.png)). 
 
+https://646224fa2f43910ccafb6536--moonlit-mochi-6d77b0.netlify.app/
+
 <img src="Figs/IEEE_39_Bus.png" alt="Snapshot of the designed dashboard" width="1100" height="450">
 
 ######################################################################
