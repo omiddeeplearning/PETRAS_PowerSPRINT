@@ -73,7 +73,7 @@ The code will run and display the overall accuracy with the needed computation t
 # Visualization
 To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file (this repository also includes one sample snapshot of the dashboard (IEEE 39-bus.png)). 
 
-![Snapshot of the designed dashboard](./IEEE_39_Bus.png)
+<img src="./IEEE_39_Bus.png" alt="Snapshot of the designed dashboard" width="900" height="600">
 
 ######################################################################
 # Papers
@@ -83,8 +83,6 @@ H. Jahangir, S. Lakshminarayana, C. Maple and G. Epiphaniou, "A Deep Learning-ba
 https://ieeexplore.ieee.org/abstract/document/10026883
 
 <img src="./IoTJ.JPG" alt="First page of the IoTJ paper" width="400" height="500">
-
-![First page of the IoTJ paper](./IoTJ.JPG)
 
 ######################################################################
 
