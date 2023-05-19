@@ -10,6 +10,10 @@
 # Project Summary
 https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
 
+## PI : Dr Subhash Lakshminarayana, Associate Professor, School Of Engineering, University of Warwick, UK (Subhash.Lakshminarayana@warwick.ac.uk)
+## Co-PI : Professor Carsten Maple, Professor, Warwick Manufacturing Group, University of Warwick, UK (CM@warwick.ac.uk)
+## Postdoc Researcher: Dr Hamidreza Jahangir, Research Fellow, School Of Engineering, University of Warwick, UK (Hamidreza.Jahangir@warwick.ac.uk)
+
 Power-SPRINT investigates the cybersecurity risks posed by the growing integration of IoT-enabled smart-home appliances on power grid operations. 
 Existing research on power grid security mainly focuses on utility-side cyber attacks and the associated SCADA system security.
 In contrast, the cyber threats posed by end-user appliances on power grid operations have received little attention. 
