@@ -61,7 +61,10 @@ Copy the extracted file to the main directory of the source code, "Localization 
 
 After completing these steps, you'll have the necessary pre-trained models in place for the IEEE 14-BUS case. Repeat a similar process for other cases.
 
-The code will run and display the overall accuracy and computation time.
+The code will run and display the confusion matrix, a sample of the monitoring profiles (frequency and voltage phase angles), overall accuracy and computation time.
+
+![Snapshot of the designed dashboard](./IEEE_39_Bus.png)
+
 
 ######################################################################
 # Visualization
