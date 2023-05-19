@@ -2,7 +2,7 @@
 
 ## This code is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
 
-<img src="./Designed_Net.png" alt="Designed Network" width="800" height="400">
+<img src="./Designed_Net.png" alt="Designed Network" width="1000" height="600">
 
 
 ## If you encounter any issues with the code, please feel free to reach out to me via email at h.r.jahangir@gmail.com (Hamidreza Jahangir). I'll be happy to assist you further.
