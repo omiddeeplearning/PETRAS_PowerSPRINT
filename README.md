@@ -8,7 +8,6 @@
 ## If you encounter any issues with the code, please feel free to reach out to me via email at h.r.jahangir@gmail.com (Hamidreza Jahangir). I'll be happy to assist you further.
 
 # Project Summary
-https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
 
 ### PI : Dr Subhash Lakshminarayana, Associate Professor, School of Engineering, University of Warwick, UK (Subhash.Lakshminarayana@warwick.ac.uk)
 ### Co-PI : Professor Carsten Maple, Professor, Warwick Manufacturing Group, University of Warwick, UK (CM@warwick.ac.uk)
@@ -26,7 +25,7 @@ Using a control theoretic-approach, Power-SPRINT will investigate the impact of 
 Power-SPRINT will investigate how to detect such attacks if they occur using the power grid’s physical signals (e.g., load consumption, voltages, frequency, data gathered by existing power grid sensors)
 and deep learning along with implementing a privacy-preserving mechanism that can be deployed at the edge devices.
 
-
+https://petras-iot.org/project/power-grid-iot-system-protection-and-resilience-using-intelligent-edge-power-sprint/
 
 ###################################################################
 
