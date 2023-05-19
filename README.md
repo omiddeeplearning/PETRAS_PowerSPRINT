@@ -65,9 +65,10 @@ The code will run and display the overall accuracy with the needed computation t
 
 <div style="display: flex; justify-content: center;">
 <img src="./results.JPG" alt="Snapshot of the results" width="700" height="100">
+</div>
 <img src="./confusion_matrix_sample.png" alt="Snapshot of the confusion matrix" width="700" height="600">
 <img src="./monitoring_profiles_samples.png" alt="Snapshot of the monitoring profiles" width="700" height="600">
-</div>
+
 
 
 ######################################################################
