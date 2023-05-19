@@ -67,6 +67,8 @@ The code will run and display the overall accuracy and computation time.
 # Visualization
 To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file (this repository also includes one sample snapshot of the dashboard (IEEE 39-bus.png)). 
 
+![Snapshot of the designed dashboard](./IEEE_39_Bus.png)
+
 ######################################################################
 # Papers
 Detailed information of this code can be found in our paper in IEEE Internet of Things Journal:
