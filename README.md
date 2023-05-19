@@ -63,7 +63,8 @@ After completing these steps, you'll have the necessary pre-trained models in pl
 
 The code will run and display the confusion matrix, a sample of the monitoring profiles (frequency and voltage phase angles), overall accuracy and computation time.
 
-![Snapshot of the designed dashboard](./IEEE_39_Bus.png)
+![Snapshot of the designed dashboard](./confusion_matrix_sample.png)
+![Snapshot of the designed dashboard](./confusion_matrix_sample.png)
 
 
 ######################################################################
