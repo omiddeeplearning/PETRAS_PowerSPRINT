@@ -82,7 +82,7 @@ Detailed information of this code can be found in our paper in IEEE Internet of 
 H. Jahangir, S. Lakshminarayana, C. Maple and G. Epiphaniou, "A Deep Learning-based Solution for Securing the Power Grid against Load Altering Threats by IoT-enabled Devices," in IEEE Internet of Things Journal, doi: 10.1109/JIOT.2023.3240289.
 https://ieeexplore.ieee.org/abstract/document/10026883
 
-<img src="./IoTJ.JPG" alt="First page of the IoTJ paper" width="600" height="800">
+<img src="./IoTJ.JPG" alt="First page of the IoTJ paper" width="400" height="500">
 
 ![First page of the IoTJ paper](./IoTJ.JPG)
 
