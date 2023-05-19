@@ -63,9 +63,9 @@ After completing these steps, you'll have the necessary pre-trained models in pl
 
 The code will run and display the overall accuracy with the needed computation time, confusion matrix, and a sample of the monitoring profiles (frequency and voltage phase angles).
 
-<img src="./results.JPG" alt="Snapshot of the results" width="500" height="100">
-<img src="./confusion_matrix_sample.png" alt="Snapshot of the confusion matrix" width="500" height="500">
-<img src="./monitoring_profiles_samples.png" alt="Snapshot of the monitoring profiles" width="500" height="500">
+<img src="./results.JPG" alt="Snapshot of the results" width="600" height="100">
+<img src="./confusion_matrix_sample.png" alt="Snapshot of the confusion matrix" width="600" height="500">
+<img src="./monitoring_profiles_samples.png" alt="Snapshot of the monitoring profiles" width="600" height="500">
 
 
 
@@ -73,7 +73,7 @@ The code will run and display the overall accuracy with the needed computation t
 # Visualization
 To visualize the results in different operation scenarios, you can use the dashboard provided in the repository by following the instructions in the Dashboard_README.md file (this repository also includes one sample snapshot of the dashboard (IEEE 39-bus.png)). 
 
-<img src="./IEEE_39_Bus.png" alt="Snapshot of the designed dashboard" width="900" height="400">
+<img src="./IEEE_39_Bus.png" alt="Snapshot of the designed dashboard" width="1100" height="500">
 
 ######################################################################
 # Papers
