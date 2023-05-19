@@ -66,7 +66,7 @@ After completing these steps, you'll have the necessary pre-trained models in pl
 
 The code will run and display the overall accuracy with the needed computation time, confusion matrix, and a sample of the monitoring profiles (frequency and voltage phase angles).
 
-<img src="./results.JPG" alt="Snapshot of the results" width="600" height="100">
+<img src="./results.JPG" alt="Snapshot of the results" width="600" height="80">
 <img src="./confusion_matrix_sample.png" alt="Snapshot of the confusion matrix" width="600" height="500">
 <img src="./monitoring_profiles_samples.png" alt="Snapshot of the monitoring profiles" width="600" height="500">
 
