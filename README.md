@@ -1,6 +1,6 @@
 # Power Grid IoT System Protection and Resilience using Intelligent Edge (Power-SPRINT)
 
-## This code (the bellow deep network) is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
+## This code (the below deep network) is designed for localization of the primary source of the load-altering threats in power grids for the Power-SPRINT project.
 
 <img src="Figs/Designed_Net.png" alt="Designed Network" width="1000" height="300">
 
